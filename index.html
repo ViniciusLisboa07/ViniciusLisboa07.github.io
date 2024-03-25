@@ -8,20 +8,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="main.js" defer></script>
 </head>
 <body>
 
     <!-- Seção de Apresentação -->
-    <section id="presentation" class="section">
-      <div>
-        <p>Olá, mundo! Meu nome é <b>Vinícius Lisboa </b> sou um</p>
+    <section id="presentation">
+      <div class="hidden">
+        <p class="text-tywriter">Olá, mundo! Meu nome é <b>Vinícius Lisboa </b> sou um</p>
         <h1>Desenvolvedor <i>Web</i> FullStack</h1>
       </div>
     </section>
 
     <!-- Seção Sobre Mim -->
-    <section id="about" class="section">
-        <div class="about-me">
+    <section id="about">
+        <div class="about-me hidden">
             <h2>Sobre Mim</h2>
             <p>
                 Olá! Sou um apaixonado desenvolvedor web fullstack, com uma jornada profissional especializada em Ruby on Rails, atuando com dedicação e entusiasmo na área há três anos.
@@ -38,16 +39,16 @@
         </div>
 
         <div>
-            <img class="me-picture" src="imgs/982fb51a-e6ed-4ceb-98b6-3d36b9b5a453.jpg" alt="Foto de perfil">
+            <img class="me-picture hidden" src="imgs/982fb51a-e6ed-4ceb-98b6-3d36b9b5a453.jpg" alt="Foto de perfil">
         </div>
     </section>
 
     <!-- Seção de Projetos -->
-    <section id="projects" class="section">
-        <h2>Projetos</h2>
+    <section id="projects">
+        <h2 class="hidden">Projetos</h2>
 
         <div class="project-list">
-            <div class="project">
+            <div class="project hidden">
                 <img src="https://via.placeholder.com/300" alt="Projeto 1">
                 <h3>Nome do Projeto</h3>
                 <p>Descrição do projeto...</p>
@@ -55,15 +56,15 @@
                 <a href="#" class="button">Ver Projeto</a>
             </div>
     
-            <div class="project">
-                <img src="https://via.placeholder.com/300" alt="Projeto 1">
+            <div class="project hidden">
+                <img src="https://via.placeholder.com/300" alt="Projeto 2">
                 <h3>Nome do Projeto</h3>
                 <p>Descrição do projeto...</p>
     
                 <a href="#" class="button">Ver Projeto</a>
             </div>
-            <div class="project">
-                <img src="https://via.placeholder.com/300" alt="Projeto 1">
+            <div class="project hidden">
+                <img src="https://via.placeholder.com/300" alt="Projeto 3">
                 <h3>Nome do Projeto</h3>
                 <p>Descrição do projeto...</p>
     
@@ -74,15 +75,15 @@
     </section>
 
     <!-- Seção de Currículo -->
-    <section id="curriculum" class="section">
-        <h2>Currículo</h2>
-        <p>Você pode baixar e ter acesso ao meu Currículo aqui...</p>
+    <section id="curriculum" >
+        <h2 class="hidden">Currículo</h2>
+        <p class="hidden">Você pode baixar e ter acesso ao meu Currículo aqui...</p>
 
-        <button class="button">Baixar Currículo</button>
+        <button class="button hidden">Baixar Currículo</button>
     </section>
 
     <!-- Seção de Contato -->
-    <section id="contact" class="section">
+    <section id="contact" >
         <h2>Contato</h2>
         <form action="#" method="post">
             <label for="name">Nome:</label>
@@ -100,7 +101,7 @@
 
     <!-- Rodapé --> 
     <footer class="footer">
-        <p>&copy; 2021 Vinícius Lisboa. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Vinícius Lisboa. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>

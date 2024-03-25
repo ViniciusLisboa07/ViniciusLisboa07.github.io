@@ -9,7 +9,7 @@ body {
   flex-direction: column;
 }
 
-.section {
+section {
   flex: 1;
   padding: 50px;
   background-color: #f9f9f9;
@@ -20,6 +20,30 @@ body {
 
 h2 {
   color: #333;
+}
+
+
+.text-tywriter{
+  display: inline-block; /* Para o texto ficar em linha */
+  border-right: .15em solid orange; /* Para simular o cursor */
+  margin: 0 auto; /* Para centralizar o texto */
+  width: 100%; /* Para o texto ocupar toda a largura */
+  white-space: nowrap; /* Para não quebrar a linha */
+  overflow: hidden; /* Para esconder o texto que ultrapassa o tamanho do container */
+  letter-spacing: .15em; /* Espaçamento entre as letras */
+  animation: 
+    typing 3.5s steps(40), 
+    blink-caret .75s step-end infinite; /* Animação do texto */
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
 }
 
 #presentation {
@@ -161,4 +185,36 @@ h2 {
   background-color: #333;
   min-height: 30vh;
   color: #fff;
+}
+
+.project:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.project:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.project:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+.hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+
+@media(prefers-reduced-motion) {
+  .hidden{
+    transition: none;
+  }
 }
