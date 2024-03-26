@@ -22,18 +22,19 @@ h2 {
   color: #333;
 }
 
+.container {
+  display: inline-block;
+}
 
-.text-tywriter{
-  display: inline-block; /* Para o texto ficar em linha */
-  border-right: .15em solid orange; /* Para simular o cursor */
-  margin: 0 auto; /* Para centralizar o texto */
-  width: 100%; /* Para o texto ocupar toda a largura */
+.text-writer{
+  border-right: .15em solid orange; 
+  margin: 0 auto;
   white-space: nowrap; /* Para não quebrar a linha */
   overflow: hidden; /* Para esconder o texto que ultrapassa o tamanho do container */
   letter-spacing: .15em; /* Espaçamento entre as letras */
   animation: 
-    typing 3.5s steps(40), 
-    blink-caret .75s step-end infinite; /* Animação do texto */
+    typing 1.5s steps(40), 
+    blink-caret .50s step-end infinite; /* Animação do texto */
 }
 
 @keyframes typing {
