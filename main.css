@@ -67,6 +67,18 @@ h2 {
   color: #333;
 }
 
+#social-medias{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+#social-medias img {
+  margin-right: 10px;
+  color: #666;
+}
+
 #about {
   display: flex;
   justify-content: center;
@@ -113,12 +125,6 @@ h2 {
 
 .project p {
   color: #777;
-}
-
-.curriculum {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .button {
