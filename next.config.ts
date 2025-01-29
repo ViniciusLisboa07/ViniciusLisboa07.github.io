@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/ViniciusLisboa07.github.io',
+  basePath: '/meu-portfolio',
   /* config options here */
 };
 
