@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  // basePath: '/meu-portfolio',
+  basePath: '/ViniciusLisboa07.github.io',
+  assetPrefix: '/ViniciusLisboa07.github.io/',
   /* config options here */
 };
 
