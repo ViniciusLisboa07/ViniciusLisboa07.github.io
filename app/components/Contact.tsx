@@ -1,8 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useTranslation } from 'react-i18next'
 
 export default function Contact() {
+  const { t } = useTranslation()
+
   return (
     <section id="contact" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 text-center">
@@ -12,7 +15,7 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-3xl font-bold mb-8"
         >
-          Vamos trabalhar juntos!
+          {t('work_together')}
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,24 +24,24 @@ export default function Contact() {
           className="space-y-4"
         >
           <p>
-            Se você gostaria de entrar em contato comigo, por favor, envie-me um{" "}
+            {t('send_email')}
             <a href="mailto:viniciuslisboa1001@gmail.com" className="text-gray-400 hover:text-white underline">
-              e-mail
+              {t('email')}
             </a>
           </p>
           <p>
-            Você também pode me encontrar no{" "}
+            {t('find_me_on')}
             <a
               href="https://www.linkedin.com/in/vin%C3%ADcius-lisboa-6347971a9/"
               className="text-gray-400 hover:text-white underline"
             >
-              LinkedIn
+              {t('linkedin')}
             </a>
           </p>
           <p>
-            Ou se preferir, me envie uma mensagem no{" "}
+            {t('send_message')}
             <a href="https://wa.me/5541988073637" className="text-gray-400 hover:text-white underline">
-              WhatsApp
+              {t('whatsapp')}
             </a>
           </p>
         </motion.div>

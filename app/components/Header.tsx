@@ -2,8 +2,11 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
+  const { t } = useTranslation()
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -30,22 +33,24 @@ export default function Header() {
         <ul className="flex space-x-6">
           <li>
             <a href="#about" className="hover:text-gray-300 transition-colors">
-              About
+              {t('about')}
             </a>
           </li>
           <li>
             <a href="#projects" className="hover:text-gray-300 transition-colors">
-              Projects
+              {t('projects')}
             </a>
           </li>
           <li>
             <a href="#contact" className="hover:text-gray-300 transition-colors">
-              Contact
+              {t('projects')}
             </a>
+          </li>
+          <li>
+            <LanguageSwitcher />
           </li>
         </ul>
       </nav>
     </motion.header>
   )
 }
-
