@@ -20,10 +20,14 @@
   "agile_deck_description": "Crie salas e faças suas estimativas de forma ágil e prática.",
   "nodejs_tts": "NodeJS Text to Speech",
   "nodejs_tts_description": "Conversor de texto para áudio utilizando NodeJS e a serviço Balcon.",
+  "lisb": "Lisb",
+  "lisb_description": "Compilador de Ruby para JavaScript escrito em Ruby.",
   "about_me": "Sobre Mim",
   "about_me_description": "Sou um desenvolvedor web apaixonado por Ruby on Rails, com uma jornada profissional especializada em criar soluções de software escaláveis e de alta qualidade.",
   "about_me_description_2": "Desde que entrei no mundo da programação, descobri minha paixão por criar soluções digitais que não apenas funcionam, mas também encantam os usuários. Com habilidades sólidas em desenvolvimento front-end e back-end, sou capaz de traduzir conceitos criativos em produtos de software robustos e funcionais.",
   "about_me_description_3": "Meu foco principal tem sido a plataforma Ruby on Rails, onde encontrei uma combinação perfeita entre produtividade e desempenho. Trabalhar com essa tecnologia me permitiu explorar meu potencial criativo enquanto construo aplicações escaláveis e de alta qualidade.",
   "view_project": "Ver Projeto",
-  "all_rights_reserved": "Todos os direitos reservados."
+  "all_rights_reserved": "Todos os direitos reservados.",
+  "condogenius": "CondoGenius",
+  "condogenius_description": "CondoGenius é uma plataforma para gerenciar condomínios."
 }

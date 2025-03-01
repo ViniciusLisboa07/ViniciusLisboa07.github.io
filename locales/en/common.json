@@ -25,5 +25,9 @@
   "about_me_description_2": "Since I entered the programming world, I discovered my passion for creating digital solutions that not only work, but also enchant users. With solid skills in front-end and back-end development, I'm able to translate creative concepts into robust and functional software products.",
   "about_me_description_3": "My main focus has been the Ruby on Rails platform, where I found a perfect combination of productivity and performance. Working with this technology allowed me to explore my creative potential while building scalable and high-quality applications.",
   "view_project": "View Project",
-  "all_rights_reserved": "All rights reserved."
+  "all_rights_reserved": "All rights reserved.",
+  "lisb": "Lisb",
+  "lisb_description": "Ruby to JavaScript compiler written in Ruby.",
+  "condogenius": "CondoGenius",
+  "condogenius_description": "CondoGenius is a platform for managing condominiums."
 }
