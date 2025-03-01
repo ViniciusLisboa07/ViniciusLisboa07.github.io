@@ -18,6 +18,18 @@ export default function Projects() {
       description: t('nodejs_tts_description'),
       image: "/images/microphone-2316268_1280.jpg",
       link: "https://github.com/ViniciusLisboa07/nodeJS-text-to-speech",
+    },
+    {
+      title: t('lisb'),
+      description: t('lisb_description'),
+      image: "/images/lisb.png",
+      link: "https://github.com/ViniciusLisboa07/lisb",
+    },
+    {
+      title: t('condogenius'),
+      description: t('condogenius_description'),
+      image: "/images/condogenius.jpeg",
+      link: "https://github.com/CondoGenius/condogenius",
     }
   ]
 

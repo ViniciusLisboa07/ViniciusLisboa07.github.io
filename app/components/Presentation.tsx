@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
 import { useTranslation } from 'react-i18next'
-import { useState, useEffect } from "react"
 
 export default function Presentation() {
   const { t } = useTranslation()
