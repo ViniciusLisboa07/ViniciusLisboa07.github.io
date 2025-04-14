@@ -14,13 +14,13 @@ export default function LanguageSwitcher() {
   return (
     <div className="flex space-x-2">
       <button 
-        className="px-2 py-1 rounded hover:bg-gray-700 transition-colors"
+        className="px-2 py-1 rounded hover:bg-gray-100 text-black transition-colors"
         onClick={() => changeLanguage('en')}
       >
         EN
       </button>
       <button 
-        className="px-2 py-1 rounded hover:bg-gray-700 transition-colors"
+        className="px-2 py-1 rounded hover:bg-gray-100 text-black transition-colors"
         onClick={() => changeLanguage('pt')}
       >
         PT
