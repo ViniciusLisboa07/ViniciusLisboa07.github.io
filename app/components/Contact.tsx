@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next'
 import { useState, FormEvent } from "react"
 import emailjs from '@emailjs/browser'
@@ -16,7 +15,7 @@ export default function Contact() {
     message: ''
   })
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
