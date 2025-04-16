@@ -54,14 +54,14 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-black mb-12 text-center">{t('contact_me')}</h2>
+      <div className="container mx-auto px-6 text-center">
+        <h2 className="text-4xl md:text-5xl font-black mb-12 text-center">{t('work_together')}</h2>
+        <p className="text-2xl text-gray-700 pb-12">
+          {t('have_a_project_in_mind')}
+        </p>
         <div className="flex justify-center">
-          <form 
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-4 bg-white p-8 border border-gray-200 rounded-lg w-full md:w-1/2"
-          >
-            <div className="flex flex-col gap-2 text-left">
+          <form  onSubmit={handleSubmit} className="flex flex-col gap-4 w-full bg-white md:p-8 border border-gray-200 rounded-lg md:w-1/2">
+            <div className="flex flex-col gap-2 md:text-left">
               <label htmlFor="name" className="text-lg text-gray-700">{t('name')}</label>
               <input 
                 type="text" 
@@ -74,7 +74,7 @@ export default function Contact() {
                 required 
               /> 
             </div>
-            <div className="flex flex-col gap-2 text-left">
+            <div className="flex flex-col gap-2 md:text-left">
               <label htmlFor="email" className="text-lg text-gray-700">{t('email')}</label>
               <input 
                 type="email" 
@@ -87,7 +87,7 @@ export default function Contact() {
                 required 
               />
             </div>
-            <div className="flex flex-col gap-2 text-left">
+            <div className="flex flex-col gap-2 md:text-left">
               <label htmlFor="message" className="text-lg text-gray-700">{t('message')}</label>
               <textarea 
                 id="message" 

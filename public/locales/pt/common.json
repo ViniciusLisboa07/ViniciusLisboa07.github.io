@@ -38,5 +38,7 @@
   "email": "E-mail",
   "message": "Mensagem",
   "send": "Enviar",
-  "toolbox_title": "Minha Caixa de Ferramentas"
+  "toolbox_title": "Minha Caixa de Ferramentas",
+  "message_sent": "Mensagem enviada com sucesso!",
+  "message_error": "Erro ao enviar mensagem. Por favor, tente novamente mais tarde."
 }
