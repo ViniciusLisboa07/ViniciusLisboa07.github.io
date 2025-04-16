@@ -38,5 +38,7 @@
   "email": "Email",
   "message": "Message",
   "send": "Send",
-  "toolbox_title": "My Toolbox"
+  "toolbox_title": "My Toolbox",
+  "message_sent": "Message sent successfully!",
+  "message_error": "Error sending message. Please try again later."
 }
