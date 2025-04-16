@@ -15,10 +15,6 @@ export default function Contact() {
     message: ''
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -67,7 +63,7 @@ export default function Contact() {
                 id="name" 
                 name="name" 
                 value={formData.name}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder={t('name')} 
                 className="border border-gray-300 rounded-md p-2" 
                 required 
@@ -80,7 +76,7 @@ export default function Contact() {
                 id="email" 
                 name="email" 
                 value={formData.email}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder={t('email')} 
                 className="border border-gray-300 rounded-md p-2" 
                 required 
@@ -92,7 +88,7 @@ export default function Contact() {
                 id="message" 
                 name="message" 
                 value={formData.message}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder={t('message')} 
                 className="border border-gray-300 rounded-md p-2" 
                 required 
