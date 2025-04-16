@@ -39,6 +39,9 @@ export default function Header() {
           <Link href="#projects" className="hover:underline">
             {t('projects')}
           </Link>
+          <Link href="/blog" className="hover:underline">
+            {t('blog')}
+          </Link>
           <LanguageSwitcher />
           <Button className="bg-green-600 hover:bg-green-700 text-white rounded-md font-medium" onClick={() => window.location.href = '#contact'}>
             {t('get_in_touch')}
