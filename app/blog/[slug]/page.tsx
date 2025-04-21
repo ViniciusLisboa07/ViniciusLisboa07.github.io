@@ -1,5 +1,10 @@
-import { notFound } from 'next/navigation'
-import BlogPost from '../../components/BlogPost'
+import { notFound } from 'next/navigation';
+import BlogPost from '../../components/BlogPost';
+import type { Metadata } from 'next';
+
+interface BlogPostPageProps {
+  params: Promise<{ slug: string }>;
+}
 
 const BLOG_POSTS = [
   {
@@ -18,39 +23,41 @@ const BLOG_POSTS = [
     tags: ['React', 'Frontend', 'JavaScript'],
     author: {
       name: 'Vinicius Lisboa',
-      imageUrl: '/images/profile.jpg'
-    }
+      imageUrl: '/images/profile.jpg',
+    },
   },
-]
+];
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
-export function generateMetadata({ params }) {
-  const post = BLOG_POSTS.find(post => post.slug === params.slug)
-  
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params; 
+  const post = BLOG_POSTS.find((post) => post.slug === slug);
+
   if (!post) {
     return {
       title: 'Post não encontrado',
-      description: 'O artigo que você está procurando não existe'
-    }
+      description: 'O artigo que você está procurando não existe',
+    };
   }
-  
+
   return {
     title: `${post.title} | Blog de Vinicius Lisboa`,
-    description: post.excerpt || post.content.substring(0, 160)
-  }
+    description: post.content.substring(0, 160),
+  };
 }
 
-export default function BlogPostPage({ params }) {
-  const post = BLOG_POSTS.find(post => post.slug === params.slug)
-  
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params; 
+  const post = BLOG_POSTS.find((post) => post.slug === slug);
+
   if (!post) {
-    notFound()
+    notFound();
   }
-  
-  return <BlogPost post={post} />
-} 
+
+  return <BlogPost post={post} />;
+}

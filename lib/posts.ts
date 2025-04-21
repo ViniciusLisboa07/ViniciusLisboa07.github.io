@@ -42,7 +42,7 @@ export function getAllPosts(): Post[] {
   const allPostsData = fileNames.map(fileName => {
     const slug = fileName.replace(/\.mdx$/, '')
     return getPostBySlug(slug)
-  })
+  }) as Post[]
   
   return allPostsData.sort(({ date: a }, { date: b }) => {
     if (a < b) return 1

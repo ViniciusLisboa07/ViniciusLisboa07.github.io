@@ -4,7 +4,21 @@ import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 
-export default function BlogPost({ post }) {
+type BlogPost = {
+  id: string;
+  title: string;
+  content: string;
+  date: string;
+  imageUrl: string;
+  slug: string;
+  tags: string[];
+  author: {
+    name: string;
+    imageUrl: string;
+  };
+}
+
+export default function BlogPost({ post }: { post: BlogPost }) {
   const { t } = useTranslation()
   
   if (!post) return null
@@ -48,7 +62,7 @@ export default function BlogPost({ post }) {
           )}
           
           <div className="flex gap-2 mb-8">
-            {post.tags.map(tag => (
+            {post.tags.map((tag: string) => (
               <span key={tag} className="px-3 py-1 bg-gray-100 text-sm rounded-full text-gray-600">
                 {tag}
               </span>
