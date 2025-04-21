@@ -39,7 +39,7 @@ export default function Header() {
           <Link href="#projects" className="hover:underline">
             {t('projects')}
           </Link>
-          <Link href="/blog" className="hover:underline">
+          <Link href="https://dev.to/viniciuslisboa07" target="_blank" className="hover:underline">
             {t('blog')}
           </Link>
           <LanguageSwitcher />
