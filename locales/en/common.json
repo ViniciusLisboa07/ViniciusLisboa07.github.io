@@ -40,5 +40,10 @@
   "send": "Send",
   "toolbox_title": "My Toolbox",
   "message_sent": "Message sent successfully!",
-  "message_error": "Error sending message. Please try again later."
+  "message_error": "Error sending message. Please try again later.",
+  "blog": "Blog",
+  "blog_description": "Articles about web development, technology and programming",
+  "search_posts": "Search posts",
+  "tags": "Tags",
+  "all_posts": "All Posts"
 }
