@@ -36,7 +36,7 @@ const BLOG_POSTS = [
 ]
 
 export default function Blog() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedTag, setSelectedTag] = useState('')
   

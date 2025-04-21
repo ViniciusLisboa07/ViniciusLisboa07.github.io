@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
-import { useState } from 'react'
 
 export default function BlogPost({ post }) {
   const { t } = useTranslation()
