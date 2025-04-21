@@ -8,35 +8,17 @@ import { useState } from 'react'
 const BLOG_POSTS = [
   {
     id: '1',
-    title: 'Como iniciar com React',
+    title: 'Inserção de dados em massa em bancos relacionais',
     excerpt: 'Um guia para iniciantes em React, abordando os conceitos básicos...',
     date: '2023-10-15',
-    imageUrl: '/images/blog/react-basics.jpg',
-    slug: 'como-iniciar-com-react',
-    tags: ['React', 'Frontend', 'JavaScript']
-  },
-  {
-    id: '2',
-    title: 'Construindo APIs com Ruby on Rails',
-    excerpt: 'Aprenda a criar APIs RESTful eficientes utilizando Ruby on Rails...',
-    date: '2023-09-22',
-    imageUrl: '/images/blog/rails-api.jpg',
-    slug: 'construindo-apis-com-ruby-on-rails',
-    tags: ['Ruby', 'Rails', 'API', 'Backend']
-  },
-  {
-    id: '3',
-    title: 'Otimização de performance com Next.js',
-    excerpt: 'Técnicas avançadas para melhorar a performance do seu app Next.js...',
-    date: '2023-08-30',
-    imageUrl: '/images/blog/nextjs-performance.jpg',
-    slug: 'otimizacao-de-performance-com-nextjs',
-    tags: ['Next.js', 'Performance', 'React']
+    imageUrl: '/images/blog/bulkinsert.webp',
+    slug: 'insercao-de-dados-em-massa-em-bancos-relacionais',
+    tags: ['Banco de dados', 'SQL', 'Inserção de dados']
   },
 ]
 
 export default function Blog() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedTag, setSelectedTag] = useState('')
   
