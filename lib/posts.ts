@@ -69,7 +69,13 @@ export async function getPostContent(slug: string) {
 
     const { content: compiledContent } = await compileMDX({
       source: content,
-      options: { parseFrontmatter: true }
+      options: { 
+        parseFrontmatter: true,
+        mdxOptions: {
+          remarkPlugins: [],
+          rehypePlugins: [],
+        },
+      }
     })
 
     return {

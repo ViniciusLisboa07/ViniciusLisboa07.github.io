@@ -53,3 +53,88 @@ html {
   animation: marquee 30s linear infinite;
 }
 
+/* Estilos personalizados para Markdown */
+.prose {
+  @apply text-gray-900;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold text-gray-900 mb-8 mt-12 first:mt-0;
+}
+
+.prose h2 {
+  @apply text-3xl font-bold text-gray-900 mb-6 mt-10;
+}
+
+.prose h3 {
+  @apply text-2xl font-bold text-gray-900 mb-4 mt-8;
+}
+
+.prose h4 {
+  @apply text-xl font-bold text-gray-900 mb-4 mt-6;
+}
+
+.prose p {
+  @apply text-gray-700 leading-relaxed mb-4;
+}
+
+.prose a {
+  @apply text-green-600 hover:text-green-700 hover:underline transition-colors;
+}
+
+.prose strong {
+  @apply font-semibold text-gray-900;
+}
+
+.prose em {
+  @apply italic text-gray-700;
+}
+
+.prose code {
+  @apply bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6 border border-gray-700;
+}
+
+.prose pre code {
+  @apply bg-transparent text-gray-100 p-0 text-sm;
+}
+
+.prose code {
+  @apply bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border border-gray-200;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-green-500 pl-4 italic text-gray-600 mb-6;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-6 space-y-2;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 mb-6 space-y-2;
+}
+
+.prose li {
+  @apply text-gray-700;
+}
+
+.prose hr {
+  @apply border-gray-200 my-8;
+}
+
+.prose table {
+  @apply min-w-full border border-gray-200 rounded-lg mb-6;
+}
+
+.prose th {
+  @apply bg-gray-50 border border-gray-200 px-4 py-2 text-left font-semibold text-gray-900;
+}
+
+.prose td {
+  @apply border border-gray-200 px-4 py-2 text-gray-700;
+}
+

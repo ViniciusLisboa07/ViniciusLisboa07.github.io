@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { ReactElement } from 'react'
+import CodeBlock from './CodeBlock'
 
 type BlogPostData = {
   meta: {
@@ -72,9 +73,9 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
             ))}
           </div>
           
-          <div className="prose prose-lg max-w-none">
+          <article className="prose prose-lg max-w-none">
             {post.content}
-          </div>
+          </article>
           
           <div className="border-t border-gray-200 mt-12 pt-8">
             <h3 className="text-2xl font-bold mb-6">{t('share_post')}</h3>
