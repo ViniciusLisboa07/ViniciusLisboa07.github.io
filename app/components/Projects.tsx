@@ -46,7 +46,7 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gray rounded-lg overflow-hidden shadow-lg"
             >
-              <Image src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-48 object-cover" />
+              <Image src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-48 object-cover"  width={1280} height={720}/>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-400 mb-4">{project.description}</p>

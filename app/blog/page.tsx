@@ -1,4 +1,5 @@
 import Blog from '../components/Blog'
+import { getAllPosts, getAllTags } from '../../lib/posts'
 
 export const metadata = {
   title: 'Blog | Vinicius Lisboa',
@@ -6,5 +7,8 @@ export const metadata = {
 }
 
 export default function BlogPage() {
-  return <Blog />
+  const posts = getAllPosts()
+  const allTags = getAllTags()
+  
+  return <Blog posts={posts} allTags={allTags} />
 } 

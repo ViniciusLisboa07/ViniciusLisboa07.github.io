@@ -3,22 +3,25 @@
 import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
+import { ReactElement } from 'react'
 
-type BlogPost = {
-  id: string;
-  title: string;
-  content: string;
-  date: string;
-  imageUrl: string;
-  slug: string;
-  tags: string[];
-  author: {
-    name: string;
+type BlogPostData = {
+  meta: {
+    slug: string;
+    title: string;
+    excerpt: string;
+    date: string;
     imageUrl: string;
+    tags: string[];
+    author: {
+      name: string;
+      imageUrl: string;
+    };
   };
+  content: ReactElement;
 }
 
-export default function BlogPost({ post }: { post: BlogPost }) {
+export default function BlogPost({ post }: { post: BlogPostData }) {
   const { t } = useTranslation()
   
   if (!post) return null
@@ -38,21 +41,21 @@ export default function BlogPost({ post }: { post: BlogPost }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl font-black mb-6">{post.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-black mb-6">{post.meta.title}</h1>
           
           <div className="flex items-center mb-8">
-            {post.author && (
+            {post.meta.author && (
               <div className="flex items-center mr-6">
                 <div className="w-10 h-10 rounded-full bg-gray-200 mr-3"></div>
-                <span className="font-medium">{post.author.name}</span>
+                <span className="font-medium">{post.meta.author.name}</span>
               </div>
             )}
             <div className="text-gray-500">
-              {new Date(post.date).toLocaleDateString()}
+              {new Date(post.meta.date).toLocaleDateString()}
             </div>
           </div>
           
-          {post.imageUrl && (
+          {post.meta.imageUrl && (
             <div className="aspect-video bg-gray-200 rounded-xl mb-8 overflow-hidden">
               {/* Aqui você pode adicionar a imagem real quando tiver */}
               <div className="h-full w-full flex items-center justify-center text-gray-400">
@@ -62,17 +65,16 @@ export default function BlogPost({ post }: { post: BlogPost }) {
           )}
           
           <div className="flex gap-2 mb-8">
-            {post.tags.map((tag: string) => (
+            {post.meta.tags.map((tag: string) => (
               <span key={tag} className="px-3 py-1 bg-gray-100 text-sm rounded-full text-gray-600">
                 {tag}
               </span>
             ))}
           </div>
           
-          <div 
-            className="prose prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          <div className="prose prose-lg max-w-none">
+            {post.content}
+          </div>
           
           <div className="border-t border-gray-200 mt-12 pt-8">
             <h3 className="text-2xl font-bold mb-6">{t('share_post')}</h3>

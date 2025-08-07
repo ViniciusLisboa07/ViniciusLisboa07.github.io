@@ -3,51 +3,27 @@
 import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import type { PostMeta } from '../../lib/posts'
 
-const BLOG_POSTS = [
-  {
-    id: '1',
-    title: 'Como iniciar com React',
-    excerpt: 'Um guia para iniciantes em React, abordando os conceitos básicos...',
-    date: '2023-10-15',
-    imageUrl: '/images/blog/react-basics.jpg',
-    slug: 'como-iniciar-com-react',
-    tags: ['React', 'Frontend', 'JavaScript']
-  },
-  {
-    id: '2',
-    title: 'Construindo APIs com Ruby on Rails',
-    excerpt: 'Aprenda a criar APIs RESTful eficientes utilizando Ruby on Rails...',
-    date: '2023-09-22',
-    imageUrl: '/images/blog/rails-api.jpg',
-    slug: 'construindo-apis-com-ruby-on-rails',
-    tags: ['Ruby', 'Rails', 'API', 'Backend']
-  },
-  {
-    id: '3',
-    title: 'Otimização de performance com Next.js',
-    excerpt: 'Técnicas avançadas para melhorar a performance do seu app Next.js...',
-    date: '2023-08-30',
-    imageUrl: '/images/blog/nextjs-performance.jpg',
-    slug: 'otimizacao-de-performance-com-nextjs',
-    tags: ['Next.js', 'Performance', 'React']
-  },
-]
+interface BlogProps {
+  posts: PostMeta[]
+  allTags: string[]
+}
 
-export default function Blog() {
+export default function Blog({ posts: initialPosts, allTags: initialTags }: BlogProps) {
   const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedTag, setSelectedTag] = useState('')
+  const [posts] = useState<PostMeta[]>(initialPosts)
+  const [allTags] = useState<string[]>(initialTags)
   
-  const filteredPosts = BLOG_POSTS.filter(post => {
+  const filteredPosts = posts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
     const matchesTag = selectedTag === '' || post.tags.includes(selectedTag)
     return matchesSearch && matchesTag
   })
-  
-  const allTags = Array.from(new Set(BLOG_POSTS.flatMap(post => post.tags)))
   
   return (
     <section className="py-20 pt-32 bg-white text-black">
@@ -105,7 +81,7 @@ export default function Blog() {
             {filteredPosts.length > 0 ? (
               filteredPosts.map(post => (
                 <motion.div
-                  key={post.id}
+                  key={post.slug}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
