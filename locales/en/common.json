@@ -45,5 +45,12 @@
   "blog_description": "Articles about web development, technology and programming",
   "search_posts": "Search posts",
   "tags": "Tags",
-  "all_posts": "All Posts"
+  "all_posts": "All Posts",
+  "loading": "Loading...",
+  "no_posts_found": "No posts found",
+  "read_more": "Read more",
+  "back_to_blog": "Back to blog",
+  "featured_image": "Featured image",
+  "share_post": "Share post",
+  "post_image": "Post image"
 }

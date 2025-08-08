@@ -45,5 +45,12 @@
   "blog_description": "Artigos sobre desenvolvimento web, tecnologia e programação",
   "search_posts": "Pesquisar posts",
   "tags": "Tags",
-  "all_posts": "Todos os posts"
+  "all_posts": "Todos os posts",
+  "loading": "Carregando...",
+  "no_posts_found": "Nenhum post encontrado",
+  "read_more": "Ler mais",
+  "back_to_blog": "Voltar ao blog",
+  "featured_image": "Imagem em destaque",
+  "share_post": "Compartilhar post",
+  "post_image": "Imagem do post"
 }
