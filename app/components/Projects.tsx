@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next'
-import Image from "next/image"
 
 export default function Projects() {
   const { t } = useTranslation()
