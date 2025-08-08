@@ -1,120 +1,50 @@
 "use client"
 
 import { useTranslation } from 'react-i18next'
-import { useState, FormEvent } from "react"
-import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const { t } = useTranslation()
-  const [loading, setLoading] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [error, setError] = useState(false)
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    
-    setLoading(true)
-    setSuccess(false)
-    setError(false)
-    
-    try {
-      const result = await emailjs.send(
-        'service_i0ycpfg',
-        'template_88p9v9r',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: 'viniciuslisboa1001@gmail.com'
-        },
-        'IUxuM6orB8i84GUZ7'
-      )
-      
-      console.log('Email enviado!', result.text)
-      setSuccess(true)
-      setFormData({ name: '', email: '', message: '' })
-    } catch (error) {
-      console.error('Erro ao enviar:', error)
-      setError(true)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-black mb-12 text-center">{t('work_together')}</h2>
-        <p className="text-2xl text-gray-700 pb-12">
-          {t('have_a_project_in_mind')}
-        </p>
-        <div className="flex justify-center">
-          <form  onSubmit={handleSubmit} className="flex flex-col gap-4 w-full bg-white md:p-8 border border-gray-200 rounded-lg md:w-1/2">
-            <div className="flex flex-col gap-2 md:text-left">
-              <label htmlFor="name" className="text-lg text-gray-700">{t('name')}</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder={t('name')} 
-                className="border border-gray-300 rounded-md p-2" 
-                required 
-              /> 
-            </div>
-            <div className="flex flex-col gap-2 md:text-left">
-              <label htmlFor="email" className="text-lg text-gray-700">{t('email')}</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder={t('email')} 
-                className="border border-gray-300 rounded-md p-2" 
-                required 
-              />
-            </div>
-            <div className="flex flex-col gap-2 md:text-left">
-              <label htmlFor="message" className="text-lg text-gray-700">{t('message')}</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder={t('message')} 
-                className="border border-gray-300 rounded-md p-2" 
-                required 
-              />
-            </div>
+    <section id="contact" className="py-20 bg-white min-h-screen flex items-center justify-center">
+      <div className="container mx-auto px-6">
+        <div className="max-w-8xl mx-auto">
+          <div className="relative bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-3xl p-12 md:p-16 shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
             
-            <button 
-              type="submit" 
-              disabled={loading}
-              className="bg-green-600 text-white px-6 py-2 rounded-md font-medium hover:bg-green-700 transition-colors inline-block mt-4 disabled:bg-gray-400"
-            >
-              {loading ? t('sending') : t('send')}
-            </button>
+            <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 via-green-500/20 to-green-600/20 animate-pulse"></div>
             
-            {success && (
-              <div className="mt-4 p-2 bg-green-100 text-green-800 rounded">
-                {t('message_sent')}
+            <div className="relative z-10">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+                  {t('wanna_create')}<br />
+                  {t('something')} <span className="text-green-200 font-black">{t('awesome')}</span><br />
+                  {t('together')}
+                </h2>
               </div>
-            )}
-            
-            {error && (
-              <div className="mt-4 p-2 bg-red-100 text-red-800 rounded">
-                {t('message_error')}
+
+              <div className="flex justify-center">
+                <a 
+                  href="mailto:viniciuslisboa1001@gmail.com"
+                  className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 group"
+                >
+                  <span>{t('lets_talk')}</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </a>
               </div>
-            )}
-          </form>
+              
+              <div className="text-center mt-8">
+                <p className="text-white/90 text-sm">
+                  {t('dont_like_buttons')} {t('reach_out_at')} {' '}
+                  <a className="text-green-200 hover:text-green-100 transition-colors underline">
+                    viniciuslisboa1001@gmail.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

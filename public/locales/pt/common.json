@@ -38,6 +38,7 @@
   "email": "E-mail",
   "message": "Mensagem",
   "send": "Enviar",
+  "sending": "Enviando...",
   "toolbox_title": "Minha Caixa de Ferramentas",
   "message_sent": "Mensagem enviada com sucesso!",
   "message_error": "Erro ao enviar mensagem. Por favor, tente novamente mais tarde.",
@@ -52,5 +53,12 @@
   "back_to_blog": "Voltar ao blog",
   "featured_image": "Imagem em destaque",
   "share_post": "Compartilhar post",
-  "post_image": "Imagem do post"
+  "post_image": "Imagem do post",
+  "wanna_create": "Quer criar",
+  "something": "algo",
+  "awesome": "incrível",
+  "together": "juntos?",
+  "lets_talk": "Vamos conversar",
+  "dont_like_buttons": "Não gostou de botões?",
+  "reach_out_at": "Entre em contato no"
 }
