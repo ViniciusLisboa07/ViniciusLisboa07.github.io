@@ -54,11 +54,15 @@
   "featured_image": "Featured image",
   "share_post": "Share post",
   "post_image": "Post image",
+  "selected_work": "SELECTED WORK",
+  "see_more_on": "SEE MORE ON",
+  "explore_more_projects": "Explore more projects and contributions on my GitHub profile",
+  "visit_github": "Visit GitHub",
   "wanna_create": "Wanna create",
   "something": "something",
   "awesome": "awesome",
   "together": "together?",
   "lets_talk": "Let's talk",
-  "dont_like_buttons": "Don't like buttons?",
+  "dont_like_buttons": "Don't like buttons? Reach out at",
   "reach_out_at": "Reach out at"
 }
