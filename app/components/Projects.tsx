@@ -102,9 +102,11 @@ export default function Projects() {
                       {t('see_more_on')}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2 group-hover:text-green-600 transition-colors duration-300">
-                    GitHub
-                  </h3>
+                  <a href="https://github.com/ViniciusLisboa07" target="_blank" rel="noopener noreferrer">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2 group-hover:text-green-600 transition-colors duration-300">
+                      GitHub
+                    </h3>
+                  </a>
                   <p className="text-gray-600 text-sm md:text-base max-w-2xl">
                     {t('explore_more_projects')}
                   </p>

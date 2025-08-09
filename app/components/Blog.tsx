@@ -34,9 +34,6 @@ export default function Blog({ posts: initialPosts, allTags: initialTags }: Blog
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-6xl font-black mb-6">{t('blog')}</h1>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl">
-            {t('blog_description')}
-          </p>
           
           <div className="flex flex-col md:flex-row gap-4 mb-12 justify-between">
             <div className="relative">

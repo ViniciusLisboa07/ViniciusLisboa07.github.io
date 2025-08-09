@@ -28,18 +28,40 @@ const components = {
   em: (props: React.HTMLAttributes<HTMLElement>) => (
     <em className="italic text-gray-700" {...props} />
   ),
-  code: (props: React.HTMLAttributes<HTMLElement>) => (
-    <code 
-      className="bg-gray-500 text-gray-800 px-2 py-1 rounded text-sm font-mono" 
-      {...props} 
-    />
-  ),
-  pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
-    <pre 
-      className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6" 
-      {...props} 
-    />
-  ),
+  code: (props: React.HTMLAttributes<HTMLElement>) => {
+    if (props.className?.includes('language-')) {
+      return <code {...props} />
+    }
+    return (
+      <code 
+        className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border border-gray-200" 
+        {...props} 
+      />
+    )
+  },
+              pre: (props: React.HTMLAttributes<HTMLPreElement>) => {
+              if (!props.children) {
+                return <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6" {...props} />
+              }
+
+              const child = React.Children.only(props.children) as React.ReactElement
+              const language = (child?.props as any)?.className?.replace('language-', '') || 'text'
+
+              return (
+                <div className="relative mb-6">
+                  {language !== 'text' && (
+                    <div className="absolute top-0 right-0 bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-bl-lg rounded-tr-lg">
+                      {language}
+                    </div>
+                  )}
+                  <pre className={`language-${language} bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto pt-8`}>
+                    <code className={`language-${language}`}>
+                      {(child?.props as any)?.children}
+                    </code>
+                  </pre>
+                </div>
+              )
+            },
   blockquote: (props: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
     <blockquote 
       className="border-l-4 border-green-500 pl-4 italic text-gray-600 mb-6" 
