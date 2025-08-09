@@ -7,7 +7,7 @@ import type { AppProps } from 'next/app'
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      console.log('i18n initialized:', i18next)
+      // console.log('i18n initialized:', i18next)
     }
   }, [])
 

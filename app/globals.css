@@ -1,3 +1,5 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -103,7 +105,7 @@ html {
 }
 
 .prose code {
-  @apply bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border border-gray-200;
+  @apply bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono;
 }
 
 .prose blockquote {
@@ -136,5 +138,16 @@ html {
 
 .prose td {
   @apply border border-gray-200 px-4 py-2 text-gray-700;
+}
+
+/* Code blocks styling - no borders */
+.prose pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.prose pre code {
+  @apply bg-transparent text-gray-100 p-0;
 }
 

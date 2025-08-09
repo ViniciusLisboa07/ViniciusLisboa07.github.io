@@ -3,7 +3,6 @@ import { getAllPosts, getAllTags } from '../../lib/posts'
 
 export const metadata = {
   title: 'Blog | Vinicius Lisboa',
-  description: 'Artigos sobre desenvolvimento web, tecnologia e programação',
 }
 
 export default function BlogPage() {
