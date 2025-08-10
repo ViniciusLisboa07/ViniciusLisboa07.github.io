@@ -54,15 +54,16 @@
   "featured_image": "Imagem em destaque",
   "share_post": "Compartilhar post",
   "post_image": "Imagem do post",
-  "selected_work": "TRABALHOS SELECIONADOS",
+  "selected_work": "Trabalhos Selecionados",
   "see_more_on": "VEJA MAIS NO",
   "explore_more_projects": "Explore mais projetos e contribuições no meu perfil do GitHub",
   "visit_github": "Visitar GitHub",
-  "wanna_create": "Quer criar",
+  "wanna_create": "Vamos criar",
   "something": "algo",
   "awesome": "incrível",
   "together": "juntos?",
   "lets_talk": "Vamos conversar",
-  "dont_like_buttons": "Não gosta de botões? Entre em contato em",
-  "reach_out_at": "Entre em contato em"
+  "dont_like_buttons": "Não gosta de botões?",
+  "reach_out_at": "Entre em contato em",
+  "back_to_home": "Voltar para a página inicial"
 }
