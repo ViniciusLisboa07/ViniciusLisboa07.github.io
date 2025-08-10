@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { ReactElement } from 'react'
+import Image from "next/image"
 
 type BlogPostData = {
   meta: {
@@ -46,7 +47,15 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
           <div className="flex items-center mb-8">
             {post.meta.author && (
               <div className="flex items-center mr-6">
-                <div className="w-10 h-10 rounded-full bg-gray-200 mr-3"></div>
+                <div className="w-10 h-10 rounded-full bg-gray-200 mr-3 relative">
+                  <Image 
+                    src={post.meta.author.imageUrl} 
+                    alt={post.meta.author.name} 
+                    fill 
+                    className="rounded-full"
+                    objectFit="cover"
+                  />
+                </div>
                 <span className="font-medium">{post.meta.author.name}</span>
               </div>
             )}
@@ -56,11 +65,13 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
           </div>
           
           {post.meta.imageUrl && (
-            <div className="aspect-video bg-gray-200 rounded-xl mb-8 overflow-hidden">
-              {/* Aqui você pode adicionar a imagem real quando tiver */}
-              <div className="h-full w-full flex items-center justify-center text-gray-400">
-                {t('featured_image')}
-              </div>
+            <div className="aspect-video bg-gray-200 rounded-xl mb-8 overflow-hidden relative">
+              <Image 
+                src={post.meta.imageUrl} 
+                alt={post.meta.title} 
+                fill
+                className="object-cover"
+              />
             </div>
           )}
           

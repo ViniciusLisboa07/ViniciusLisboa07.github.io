@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { useState } from 'react'
 import type { PostMeta } from '../../lib/posts'
+import Image from "next/image"
 
 interface BlogProps {
   posts: PostMeta[]
@@ -33,6 +34,13 @@ export default function Blog({ posts: initialPosts, allTags: initialTags }: Blog
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <Link href="/" className="flex items-center text-green-600 mb-8 font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+            </svg>
+            {t('back_to_home')}
+          </Link>
+
           <h1 className="text-5xl md:text-6xl font-black mb-6">{t('blog')}</h1>
           
           <div className="flex flex-col md:flex-row gap-4 mb-12 justify-between">
@@ -87,10 +95,12 @@ export default function Blog({ posts: initialPosts, allTags: initialTags }: Blog
                   <Link href={`/blog/${post.slug}`}>
                     <div className="aspect-video bg-gray-100 relative">
                       {post.imageUrl && (
-                        <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                          {/* Aqui você pode adicionar uma tag Image do Next.js quando tiver as imagens */}
-                          <span className="text-gray-400">{t('post_image')}</span>
-                        </div>
+                        <Image 
+                          src={post.imageUrl} 
+                          alt={post.title} 
+                          fill
+                          className="object-cover"
+                        />
                       )}
                     </div>
                     <div className="p-6">
