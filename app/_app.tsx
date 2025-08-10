@@ -1,7 +1,6 @@
 import "./globals.css"
 import '../i18n'
 import { useEffect } from 'react'
-import i18next from '../i18n'
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {

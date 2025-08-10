@@ -45,7 +45,7 @@ const components = {
               }
 
               const child = React.Children.only(props.children) as React.ReactElement
-              const language = (child?.props as any)?.className?.replace('language-', '') || 'text'
+              const language = (child?.props as { className?: string })?.className?.replace('language-', '') || 'text'
 
               return (
                 <div className="relative mb-6">
@@ -56,7 +56,7 @@ const components = {
                   )}
                   <pre className={`language-${language} bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto pt-8`}>
                     <code className={`language-${language}`}>
-                      {(child?.props as any)?.children}
+                      {(child?.props as { children?: React.ReactNode })?.children}
                     </code>
                   </pre>
                 </div>
