@@ -93,10 +93,12 @@ const components = {
     <td className="border border-gray-200 px-4 py-2 text-gray-700" {...props} />
   ),
   img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
-    const { src, alt, ...rest } = props
+    const { src, alt } = props
+    
+    if (!src) return null
     
     // Se o src começar com /, é um caminho absoluto do public
-    if (src?.startsWith('/')) {
+    if (src.startsWith('/')) {
       return (
         <div className="my-8">
           <Image
@@ -110,14 +112,16 @@ const components = {
       )
     }
     
-    // Para URLs externas ou caminhos relativos, usar img normal
+    // Para URLs externas ou caminhos relativos, usar Image com unoptimized
     return (
       <div className="my-8">
-        <img
+        <Image
           src={src}
           alt={alt || ''}
+          width={800}
+          height={400}
           className="rounded-lg shadow-lg w-full h-auto"
-          {...rest}
+          unoptimized
         />
       </div>
     )
