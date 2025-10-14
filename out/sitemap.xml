@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://viniciuslisboa07.github.io</loc>
+<lastmod>2025-10-14T03:33:38.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://viniciuslisboa07.github.io/blog</loc>
+<lastmod>2025-10-14T03:33:38.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://viniciuslisboa07.github.io/blog/insercao-de-dados-em-massa</loc>
+<lastmod>2025-10-14T03:33:38.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://viniciuslisboa07.github.io/blog/o-cao-mordendo-o-proprio-rabo</loc>
+<lastmod>2025-10-14T03:33:38.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+</urlset>

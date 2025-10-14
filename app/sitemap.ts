@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { getPostSlugs } from '../lib/posts'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://viniciuslisboa07.github.io'
   
