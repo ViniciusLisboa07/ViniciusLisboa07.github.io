@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://viniciuslisboa07.github.io/sitemap.xml
