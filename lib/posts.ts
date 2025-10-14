@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { compileMDX } from 'next-mdx-remote/rsc'
+import MDXComponents from '../app/components/MDXComponents'
 
 const postsDirectory = path.join(process.cwd(), 'content/blog')
 
@@ -75,7 +76,8 @@ export async function getPostContent(slug: string) {
           remarkPlugins: [],
           rehypePlugins: [],
         },
-      }
+      },
+      components: MDXComponents
     })
 
     return {

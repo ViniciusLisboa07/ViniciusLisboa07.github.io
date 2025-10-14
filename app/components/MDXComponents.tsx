@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const components = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -91,6 +92,36 @@ const components = {
   td: (props: React.TdHTMLAttributes<HTMLTableDataCellElement>) => (
     <td className="border border-gray-200 px-4 py-2 text-gray-700" {...props} />
   ),
+  img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    const { src, alt, ...rest } = props
+    
+    // Se o src começar com /, é um caminho absoluto do public
+    if (src?.startsWith('/')) {
+      return (
+        <div className="my-8">
+          <Image
+            src={src}
+            alt={alt || ''}
+            width={800}
+            height={400}
+            className="rounded-lg shadow-lg w-full h-auto"
+          />
+        </div>
+      )
+    }
+    
+    // Para URLs externas ou caminhos relativos, usar img normal
+    return (
+      <div className="my-8">
+        <img
+          src={src}
+          alt={alt || ''}
+          className="rounded-lg shadow-lg w-full h-auto"
+          {...rest}
+        />
+      </div>
+    )
+  },
 }
 
 export default components
