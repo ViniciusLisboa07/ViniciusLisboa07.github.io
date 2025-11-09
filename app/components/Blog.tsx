@@ -28,6 +28,13 @@ export default function Blog({ posts: initialPosts, allTags: initialTags }: Blog
   
   return (
     <section className="py-20 pt-32 bg-white text-black">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-QY2VMWMXL2"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments)}
+        gtag('js', new Date());
+        gtag('config', 'G-QY2VMWMXL2');
+      </script>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
