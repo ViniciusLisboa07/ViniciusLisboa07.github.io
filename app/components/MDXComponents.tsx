@@ -100,13 +100,13 @@ const components = {
     // Se o src começar com /, é um caminho absoluto do public
     if (src.startsWith('/')) {
       return (
-        <div className="my-8">
+        <div className="my-8 flex justify-center">
           <Image
             src={src}
             alt={alt || ''}
-            width={800}
-            height={400}
-            className="rounded-lg shadow-lg w-full h-auto"
+            width={600}
+            height={300}
+            className="rounded-lg shadow-lg max-w-2xl w-full h-auto"
           />
         </div>
       )
@@ -114,13 +114,13 @@ const components = {
     
     // Para URLs externas ou caminhos relativos, usar Image com unoptimized
     return (
-      <div className="my-8">
+      <div className="my-8 flex justify-center">
         <Image
           src={src}
           alt={alt || ''}
-          width={800}
-          height={400}
-          className="rounded-lg shadow-lg w-full h-auto"
+          width={600}
+          height={300}
+          className="rounded-lg shadow-lg max-w-2xl w-full h-auto"
           unoptimized
         />
       </div>
