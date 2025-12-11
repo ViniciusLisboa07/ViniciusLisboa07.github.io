@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 import type { PostMeta } from '../../lib/posts'
 import Image from "next/image"
-import Script from 'next/script'
 
 interface BlogProps {
   posts: PostMeta[]
@@ -29,18 +28,6 @@ export default function Blog({ posts: initialPosts, allTags: initialTags }: Blog
   
   return (
     <section className="py-20 pt-32 bg-white text-black">
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-QY2VMWMXL2"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(...args){window.dataLayer.push(...args)}
-          gtag('js', new Date());
-          gtag('config', 'G-QY2VMWMXL2');
-        `}
-      </Script>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

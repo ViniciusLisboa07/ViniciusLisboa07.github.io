@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Outfit } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 
 const outfit = Outfit({ subsets: ["latin"] })
@@ -42,6 +43,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-QY2VMWMXL2"
+          strategy="beforeInteractive"
+        />
+        <Script id="google-analytics" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QY2VMWMXL2');
+          `}
+        </Script>
+      </head>
       <body className={outfit.className}>{children}</body>
     </html>
   )
