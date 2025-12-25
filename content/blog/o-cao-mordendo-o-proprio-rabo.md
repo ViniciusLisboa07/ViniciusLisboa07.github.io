@@ -1,6 +1,6 @@
 ---
 title: "O cão mordendo o próprio rabo"
-excerpt: ""
+excerpt: "Como os ciclos de tendencia influenciam decisões tecnicas?"
 date: "2025-07-11"
 imageUrl: "/images/blog/dog-biting-tail.png"
 tags: ["Ruby", "Rails", "Frontend", "React", "SSR", "SPA"]

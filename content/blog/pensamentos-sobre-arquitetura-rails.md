@@ -1,6 +1,6 @@
 ---
 title: "Pensamentos sobre arquitetura do Rails"
-excerpt: ""
+excerpt: "Ou como o Rails enxerga soluções para os problemas classicos da arquitetura"
 date: "2025-12-09"
 imageUrl: "/images/blog/arquitetura-rails.png"
 tags: ["Ruby", "Rails", "DDD", "ActiveRecord", "Arquitetura"]

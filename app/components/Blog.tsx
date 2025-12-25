@@ -42,8 +42,26 @@ export default function Blog({ posts: initialPosts, allTags: initialTags }: Blog
           </Link>
 
           <h1 className="text-5xl md:text-6xl font-black mb-6">{t('blog')}</h1>
+
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 text-gray-700 max-w-3xl">{t('blog_description')}</h2>
           
-          <div className="flex flex-col md:flex-row gap-4 mb-12 justify-between">
+          <div className="flex flex-col sm:flex-row gap-3 mb-8 bg-gray-100 p-3 rounded-lg items-center max-w-2xl">
+            <p className="text-sm md:text-base text-gray-700 flex-1">{t('subscribe_to_newsletter')}</p>
+            <div className="relative">
+              <input
+                type="email"
+                placeholder={t('email')}
+                className="pl-3 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 w-full sm:w-64"
+              />
+              <button className="absolute right-0 top-0 bottom-0 px-4 py-2 bg-green-600 text-white rounded-r-lg hover:bg-green-700 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-col gap-8 mb-12 justify-between">
             <div className="relative">
               <input
                 type="text"
@@ -58,7 +76,7 @@ export default function Blog({ posts: initialPosts, allTags: initialTags }: Blog
                 </svg>
               </div>
             </div>
-            
+
             <div className="flex flex-wrap gap-2">
               <button
                 className={`px-3 py-1 rounded-full text-sm font-medium ${
@@ -82,61 +100,65 @@ export default function Blog({ posts: initialPosts, allTags: initialTags }: Blog
             </div>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="max-w-4xl">
             {filteredPosts.length > 0 ? (
-              filteredPosts.map(post => (
-                <motion.div
-                  key={post.slug}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <Link href={`/blog/${post.slug}`}>
-                    <div className="aspect-video bg-gray-100 relative">
-                      {post.imageUrl && (
-                        <Image 
-                          src={post.imageUrl} 
-                          alt={post.title} 
-                          fill
-                          className="object-cover"
-                        />
-                      )}
-                    </div>
-                    <div className="p-6">
-                      <div className="flex gap-2 mb-3">
-                        {post.tags.slice(0, 2).map(tag => (
-                          <span key={tag} className="px-2 py-1 bg-gray-100 text-xs rounded-full text-gray-600">
-                            {tag}
-                          </span>
-                        ))}
-                        {post.tags.length > 2 && (
-                          <span className="px-2 py-1 bg-gray-100 text-xs rounded-full text-gray-600">
-                            +{post.tags.length - 2}
-                          </span>
-                        )}
+              <div className="space-y-16">
+                {filteredPosts.map((post, index) => (
+                  <motion.article
+                    key={post.slug}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="border-b border-gray-200 pb-16 last:border-b-0 last:pb-0"
+                  >
+                    <Link href={`/blog/${post.slug}`} className="group block">
+                      <div className="mb-3">
+                        <time className="text-gray-500 text-sm">
+                          {new Date(post.date).toLocaleDateString('pt-BR', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                          })}
+                        </time>
                       </div>
-                      <h3 className="font-bold text-xl mb-2 hover:text-green-600 transition-colors">
+                      
+                      <h2 className="text-3xl md:text-4xl font-black mb-5 group-hover:text-green-600 transition-colors underline decoration-2 underline-offset-4 decoration-green-600/30 group-hover:decoration-green-600">
                         {post.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4">
-                        {new Date(post.date).toLocaleDateString()}
-                      </p>
-                      <p className="text-gray-700 mb-4">
+                      </h2>
+                      
+                      <p className="text-gray-700 text-lg mb-4 leading-relaxed">
                         {post.excerpt}
                       </p>
-                      <div className="text-green-600 font-medium text-sm flex items-center">
-                        {t('read_more')} 
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))
+                      
+                      {post.author && (
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 rounded-full bg-gray-200 relative overflow-hidden flex-shrink-0">
+                            <Image 
+                              src={post.author.imageUrl} 
+                              alt={post.author.name} 
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-gray-900 font-medium text-sm">
+                              {post.author.name}
+                            </span>
+                            {post.tags.length > 0 && (
+                              <span className="text-gray-500 text-xs mt-0.5">
+                                {post.tags.slice(0, 2).join(', ')}
+                                {post.tags.length > 2 && ` +${post.tags.length - 2}`}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </Link>
+                  </motion.article>
+                ))}
+              </div>
             ) : (
-              <div className="col-span-full text-center py-12">
+              <div className="text-center py-12">
                 <p className="text-gray-500 text-lg">{t('no_posts_found')}</p>
               </div>
             )}
