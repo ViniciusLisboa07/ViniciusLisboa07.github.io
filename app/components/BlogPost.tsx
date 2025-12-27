@@ -42,6 +42,24 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+
+          {post.meta.imageUrl && (
+            <div className="relative -mx-8 mb-10 overflow-hidden rounded-t-3xl bg-gray-100">
+              <div className="relative h-[360px] sm:h-[440px] md:h-[520px]">
+                <Image
+                  src={post.meta.imageUrl}
+                  alt={post.meta.title}
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-cover"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-black/5 to-white" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-white" />
+              </div>
+            </div>
+          )}
+
           <h1 className="text-4xl md:text-5xl font-black mb-6">{post.meta.title}</h1>
           
           <div className="flex items-center mb-8">
@@ -64,16 +82,6 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
             </div>
           </div>
           
-          {post.meta.imageUrl && (
-            <div className="aspect-video bg-gray-200 rounded-xl mb-8 overflow-hidden relative">
-              <Image 
-                src={post.meta.imageUrl} 
-                alt={post.meta.title} 
-                fill
-                className="object-cover"
-              />
-            </div>
-          )}
           
           <div className="flex gap-2 mb-8">
             {post.meta.tags.map((tag: string) => (
@@ -83,7 +91,7 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
             ))}
           </div>
           
-          <article className="prose prose-lg mx-auto max-w-4xl">
+          <article className="prose prose-lg max-w-7xl">
             {post.content}
           </article>
           
