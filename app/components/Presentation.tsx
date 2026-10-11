@@ -3,26 +3,41 @@
 import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
 import { useTranslation } from 'react-i18next'
-import { Button } from "@/components/ui/button"
+import { ArrowDown, ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import Image from "next/image"
 import React from "react"
 
 export default function Presentation() {
   const { t } = useTranslation()
 
+  const socials = [
+    { href: "https://github.com/ViniciusLisboa07", label: "GitHub", icon: Github },
+    { href: "https://www.linkedin.com/in/vin%C3%ADcius-lisboa-6347971a9/", label: "LinkedIn", icon: Linkedin },
+    { href: "mailto:viniciuslisboa1001@gmail.com", label: "E-mail", icon: Mail },
+  ]
+
   return (
-    <section id="presentation" className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="px-12 w-full flex justify-center">
+    <section id="presentation" className="min-h-screen flex flex-col relative overflow-hidden pt-28 md:pt-36">
+      <div className="container mx-auto max-w-6xl px-6 relative pb-12 md:pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-6xl"
+          className="max-w-4xl"
         >
-          <h1 className="text-7xl md:text-7xl font-bold mb-4">
-            {t('hello')} <span className="bg-yellow-300 px-2 py-0.5 font-bold">Vinicius Lisboa</span>
+          <div className="flex items-center gap-4 mb-8 font-mono text-xs uppercase tracking-[0.2em] text-ink-muted">
+            <span>{t('fullstack_developer')}</span>
+            <span className="hidden sm:block h-px w-12 bg-ink/30" />
+            <span className="hidden sm:inline">Ruby on Rails</span>
+          </div>
+
+          <p className="text-xl md:text-2xl text-ink-soft mb-3">{t('hello')}</p>
+          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl font-medium tracking-tight leading-[0.95] mb-8">
+            Vinicius <span className="italic text-forest">Lisboa</span>
           </h1>
-          <h2 className="text-4xl md:text-4xl font-black mb-12">
-            {t('i_am')}
+
+          <h2 className="text-2xl md:text-3xl font-medium mb-6 min-h-[2.5em] md:min-h-[1.5em]">
+            {t('i_am')}{' '}
             <TypeAnimation
               sequence={[
                 t('developer'), 2000,
@@ -33,47 +48,68 @@ export default function Presentation() {
               wrapper="span"
               speed={50}
               repeat={Number.POSITIVE_INFINITY}
-              className="text-gray-400"
+              className="font-serif italic text-navy"
             />
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-green-600 hover:bg-green-700 text-white rounded-md font-medium text-lg py-6 px-8" onClick={() => window.location.href = '#projects'}>
+
+          <p className="text-lg md:text-xl text-ink-soft max-w-2xl mb-10">
+            {t('hero_subtitle')}
+          </p>
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <a
+              href="#projects"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-lg font-medium text-paper transition-colors hover:bg-forest"
+            >
               {t('see_my_work')}
-            </Button>
-            <Button
-              className="border-gray-300 text-gray-700 rounded-md font-medium text-lg py-6 px-8"
-              variant="outline"
-              onClick={() => window.location.href = '#about'}
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#about"
+              className="inline-flex items-center justify-center rounded-full border border-ink/40 bg-paper/60 px-8 py-4 text-lg font-medium transition-colors hover:border-ink hover:bg-paper"
             >
               {t('learn_more')}
-            </Button>
-          </div>
-        </motion.div>
-      </div>
-      {/* <div className="container px-6 flex flex-col">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 text-center"
-        >
-          <div className="inline-flex flex-wrap justify-center gap-4 mb-8">
-            {['React', 'Next.js', 'TypeScript', 'Ruby on Rails', 'TailwindCSS', 'Node.js'].map((skill) => (
-              <span key={skill} className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full font-medium text-sm">{skill}</span>
-            ))}
-          </div>
-          
-          <div className="animate-bounce mt-8 flex justify-center">
-            <div className="flex flex-col items-center text-gray-400 cursor-pointer" onClick={() => window.scrollTo({top: window.innerHeight, behavior: 'smooth'})}>
-              <span className="text-sm mb-2">Scroll para ver mais</span>
-              <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
+            </a>
+
+            <div className="flex items-center gap-1 sm:ml-4">
+              {socials.map(({ href, label, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-11 w-11 items-center justify-center rounded-full text-ink-soft transition-colors hover:bg-ink/5 hover:text-ink"
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              ))}
             </div>
           </div>
         </motion.div>
-      </div> */}
+      </div>
+
+      {/* Gravura: paisagem gerada por scripts/engrave.py */}
+      <div className="relative flex-1 min-h-[280px] md:min-h-[360px] [mask-image:linear-gradient(to_bottom,transparent,black_30%)]">
+        <Image
+          src="/images/engraved/landscape.png"
+          alt=""
+          fill
+          priority
+          className="object-cover object-[center_42%]"
+        />
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="container mx-auto max-w-6xl px-6 pb-6 flex items-end justify-end">
+            <a
+              href="#about"
+              aria-label={t('learn_more')}
+              className="hidden md:flex h-10 w-10 items-center justify-center rounded-full border border-paper/50 text-paper animate-bounce"
+            >
+              <ArrowDown className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
-

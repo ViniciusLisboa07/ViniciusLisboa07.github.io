@@ -15,6 +15,7 @@
   "linkedin": "LinkedIn",
   "send_message": "Or if you prefer, send me a message on ",
   "whatsapp": "WhatsApp",
+  "github": "GitHub",
   "projects_title": "Projects",
   "agile_deck": "Agile Deck",
   "agile_deck_description": "Create rooms and make your estimates quickly and easily.",
@@ -66,5 +67,9 @@
   "lets_talk": "Let's talk",
   "dont_like_buttons": "Don't like buttons?",
   "reach_out_at": "Reach out at",
-  "back_to_home": "Back to home"
+  "back_to_home": "Back to home",
+  "hero_subtitle": "I build scalable, well-crafted web applications, from the database to the interface — with a special focus on Ruby on Rails.",
+  "all": "All",
+  "copy_link": "Copy link",
+  "link_copied": "Link copied!"
 }

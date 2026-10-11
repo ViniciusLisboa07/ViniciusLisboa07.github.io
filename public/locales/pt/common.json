@@ -15,6 +15,7 @@
   "linkedin": "LinkedIn",
   "send_message": "Ou se preferir, me envie uma mensagem no",
   "whatsapp": "WhatsApp",
+  "github": "GitHub",
   "projects_title": "Projetos",
   "agile_deck": "Agile Deck",
   "agile_deck_description": "Crie salas e faças suas estimativas de forma ágil e prática.",
@@ -66,5 +67,9 @@
   "lets_talk": "Vamos conversar",
   "dont_like_buttons": "Não gosta de botões?",
   "reach_out_at": "Entre em contato em",
-  "back_to_home": "Voltar para a página inicial"
+  "back_to_home": "Voltar para a página inicial",
+  "hero_subtitle": "Construo aplicações web escaláveis e bem cuidadas, do banco de dados à interface — com foco especial em Ruby on Rails.",
+  "all": "Todos",
+  "copy_link": "Copiar link",
+  "link_copied": "Link copiado!"
 }

@@ -3,31 +3,31 @@ import Image from 'next/image'
 
 const components = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="text-4xl font-bold text-gray-900 mb-8 mt-12 first:mt-0" {...props} />
+    <h1 className="font-serif text-4xl font-medium tracking-tight text-ink mb-8 mt-12 first:mt-0" {...props} />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-10" {...props} />
+    <h2 className="font-serif text-3xl font-medium tracking-tight text-ink mb-6 mt-14" {...props} />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8" {...props} />
+    <h3 className="font-serif text-2xl font-medium text-ink mb-4 mt-10" {...props} />
   ),
   h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h4 className="text-xl font-bold text-gray-900 mb-4 mt-6" {...props} />
+    <h4 className="font-serif text-xl font-medium text-ink mb-4 mt-8" {...props} />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-gray-700 leading-relaxed mb-4" {...props} />
+    <p className="text-ink-soft leading-relaxed mb-6" {...props} />
   ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a 
-      className="text-green-600 hover:text-green-700 hover:underline transition-colors" 
+      className="text-forest underline decoration-forest/40 underline-offset-4 hover:decoration-forest transition-colors" 
       {...props} 
     />
   ),
   strong: (props: React.HTMLAttributes<HTMLElement>) => (
-    <strong className="font-semibold text-gray-900" {...props} />
+    <strong className="font-semibold text-ink" {...props} />
   ),
   em: (props: React.HTMLAttributes<HTMLElement>) => (
-    <em className="italic text-gray-700" {...props} />
+    <em className="italic text-ink-soft" {...props} />
   ),
   code: (props: React.HTMLAttributes<HTMLElement>) => {
     if (props.className?.includes('language-')) {
@@ -35,27 +35,27 @@ const components = {
     }
     return (
       <code 
-        className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border border-gray-200" 
+        className="bg-paper-dark text-ink px-1.5 py-0.5 rounded-sm text-[0.85em] font-mono border border-ink/15" 
         {...props} 
       />
     )
   },
               pre: (props: React.HTMLAttributes<HTMLPreElement>) => {
               if (!props.children) {
-                return <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6" {...props} />
+                return <pre className="bg-ink text-paper p-5 rounded-sm overflow-x-auto mb-8" {...props} />
               }
 
               const child = React.Children.only(props.children) as React.ReactElement
               const language = (child?.props as { className?: string })?.className?.replace('language-', '') || 'text'
 
               return (
-                <div className="relative mb-6">
+                <div className="relative mb-8">
                   {language !== 'text' && (
-                    <div className="absolute top-0 right-0 bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded-bl-lg rounded-tr-lg">
+                    <div className="absolute top-0 right-0 bg-forest text-paper font-mono text-[11px] uppercase tracking-[0.15em] px-3 py-1">
                       {language}
                     </div>
                   )}
-                  <pre className={`language-${language} bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto pt-8`}>
+                  <pre className={`language-${language} bg-ink text-paper p-5 rounded-sm overflow-x-auto pt-10`}>
                     <code className={`language-${language}`}>
                       {(child?.props as { children?: React.ReactNode })?.children}
                     </code>
@@ -65,7 +65,7 @@ const components = {
             },
   blockquote: (props: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
     <blockquote 
-      className="border-l-4 border-green-500 pl-4 italic text-gray-600 mb-6" 
+      className="border-l-2 border-forest pl-6 font-serif text-xl italic text-ink-soft my-8" 
       {...props} 
     />
   ),
@@ -76,21 +76,21 @@ const components = {
     <ol className="list-decimal pl-6 mb-6 space-y-2" {...props} />
   ),
   li: (props: React.LiHTMLAttributes<HTMLLIElement>) => (
-    <li className="text-gray-700" {...props} />
+    <li className="text-ink-soft marker:text-forest" {...props} />
   ),
   hr: (props: React.HTMLAttributes<HTMLHRElement>) => (
-    <hr className="border-gray-200 my-8" {...props} />
+    <hr className="border-ink/20 my-12" {...props} />
   ),
   table: (props: React.TableHTMLAttributes<HTMLTableElement>) => (
     <div className="overflow-x-auto mb-6">
-      <table className="min-w-full border border-gray-200 rounded-lg" {...props} />
+      <table className="min-w-full border border-ink/30" {...props} />
     </div>
   ),
   th: (props: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => (
-    <th className="bg-gray-50 border border-gray-200 px-4 py-2 text-left font-semibold text-gray-900" {...props} />
+    <th className="bg-paper-dark border border-ink/30 px-4 py-2 text-left font-semibold text-ink" {...props} />
   ),
   td: (props: React.TdHTMLAttributes<HTMLTableDataCellElement>) => (
-    <td className="border border-gray-200 px-4 py-2 text-gray-700" {...props} />
+    <td className="border border-ink/30 px-4 py-2 text-ink-soft" {...props} />
   ),
   img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
     const { src, alt } = props
@@ -100,30 +100,30 @@ const components = {
     // Se o src começar com /, é um caminho absoluto do public
     if (src.startsWith('/')) {
       return (
-        <div className="my-8 flex justify-center">
+        <span className="my-8 flex justify-center">
           <Image
             src={src}
             alt={alt || ''}
             width={600}
             height={300}
-            className="rounded-lg shadow-lg max-w-2xl w-full h-auto"
+            className="border border-ink/30 bg-paper p-2 max-w-2xl w-full h-auto"
           />
-        </div>
+        </span>
       )
     }
     
     // Para URLs externas ou caminhos relativos, usar Image com unoptimized
     return (
-      <div className="my-8 flex justify-center">
+      <span className="my-8 flex justify-center">
         <Image
           src={src}
           alt={alt || ''}
           width={600}
           height={300}
-          className="rounded-lg shadow-lg max-w-2xl w-full h-auto"
+          className="border border-ink/30 bg-paper p-2 max-w-2xl w-full h-auto"
           unoptimized
         />
-      </div>
+      </span>
     )
   },
 }

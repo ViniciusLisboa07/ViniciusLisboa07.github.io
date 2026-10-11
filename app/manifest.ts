@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Portfolio pessoal de Vinícius Lisboa, desenvolvedor web fullstack',
     start_url: '/',
     display: 'standalone',
-    background_color: '#ffffff',
-    theme_color: '#22c55e',
+    background_color: '#EFE7D6',
+    theme_color: '#133D2C',
     icons: [
       {
         src: '/images/vinicius.jpeg',

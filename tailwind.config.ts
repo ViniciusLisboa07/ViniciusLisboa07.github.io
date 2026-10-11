@@ -9,6 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {
+        paper: { DEFAULT: "#EFE7D6", dark: "#E4D9C1" },
+        ink: { DEFAULT: "#16130F", soft: "#4A443A", muted: "#7A7163" },
+        navy: { DEFAULT: "#172447", light: "#2C3D6B" },
+        forest: { DEFAULT: "#133D2C", light: "#2F6B4F" },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -42,6 +46,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", "sans-serif"],
+        serif: ["var(--font-serif)", "serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",

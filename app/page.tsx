@@ -7,7 +7,7 @@ import Footer from "./components/Footer"
 import Toolbox from "./components/Toolbox"
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen bg-paper text-ink">
       <Header />
       <Presentation />
       <About />

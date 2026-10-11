@@ -18,13 +18,13 @@ export default function Icon() {
       <div
         style={{
           fontSize: 24,
-          background: 'linear-gradient(to bottom right, #22c55e, #16a34a)',
+          background: '#133D2C',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
+          color: '#EFE7D6',
           fontWeight: 'bold',
         }}
       >

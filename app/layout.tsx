@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
-import { Outfit } from "next/font/google"
+import { Fraunces, JetBrains_Mono, Outfit } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 
-const outfit = Outfit({ subsets: ["latin"] })
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" })
+const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-serif", style: ["normal", "italic"] })
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
   title: "Vinícius Lisboa - Desenvolvedor Web FullStack",
@@ -57,7 +59,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={outfit.className}>{children}</body>
+      <body className={`${outfit.variable} ${fraunces.variable} ${mono.variable} font-sans paper-grain`}>{children}</body>
     </html>
   )
 }

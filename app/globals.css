@@ -6,14 +6,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: 41 45% 89%;
+    --foreground: 34 19% 7%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 142.1 76.2% 36.3%;
-    --primary-foreground: 355.7 100% 97.3%;
+    --primary: 156 53% 16%;
+    --primary-foreground: 41 45% 89%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
@@ -22,10 +22,10 @@
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 142.1 76.2% 36.3%;
-    --radius: 0.5rem;
+    --border: 41 33% 78%;
+    --input: 41 33% 78%;
+    --ring: 156 53% 16%;
+    --radius: 0.25rem;
   }
 }
 
@@ -42,6 +42,37 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Compensa o header fixo ao navegar por âncoras */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Texturas de linhas onduladas (estilo gravura) */
+.waves-ink {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='9'%3E%3Cpath d='M0 4.5 Q30 1.5 60 4.5 T120 4.5' fill='none' stroke='%2316130F' stroke-opacity='0.13' stroke-width='1.1'/%3E%3C/svg%3E");
+}
+
+.waves-paper {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='9'%3E%3Cpath d='M0 4.5 Q30 1.5 60 4.5 T120 4.5' fill='none' stroke='%23EFE7D6' stroke-opacity='0.12' stroke-width='1.1'/%3E%3C/svg%3E");
+}
+
+/* Grão de papel sutil sobre toda a página */
+.paper-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0 0.06 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: #133D2C;
+  color: #EFE7D6;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -55,99 +86,22 @@ html {
   animation: marquee 30s linear infinite;
 }
 
-/* Estilos personalizados para Markdown */
+/* Markdown dos posts: o visual vem de app/components/MDXComponents.tsx;
+   aqui só neutralizamos os padrões do @tailwindcss/typography */
 .prose {
-  @apply text-gray-900;
+  @apply text-ink-soft;
+  max-width: none;
 }
 
-.prose h1 {
-  @apply text-4xl font-bold text-gray-900 mb-8 mt-12 first:mt-0;
-}
-
-.prose h2 {
-  @apply text-3xl font-bold text-gray-900 mb-6 mt-10;
-}
-
-.prose h3 {
-  @apply text-2xl font-bold text-gray-900 mb-4 mt-8;
-}
-
-.prose h4 {
-  @apply text-xl font-bold text-gray-900 mb-4 mt-6;
-}
-
-.prose p {
-  @apply text-gray-700 leading-relaxed mb-4;
-}
-
-.prose a {
-  @apply text-green-600 hover:text-green-700 hover:underline transition-colors;
-}
-
-.prose strong {
-  @apply font-semibold text-gray-900;
-}
-
-.prose em {
-  @apply italic text-gray-700;
-}
-
-.prose code {
-  @apply bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono;
-}
-
-.prose pre {
-  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6 border border-gray-700;
+.prose code::before,
+.prose code::after,
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
 }
 
 .prose pre code {
-  @apply bg-transparent text-gray-100 p-0 text-sm;
-}
-
-.prose code {
-  @apply bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono;
-}
-
-.prose blockquote {
-  @apply border-l-4 border-green-500 pl-4 italic text-gray-600 mb-6;
-}
-
-.prose ul {
-  @apply list-disc pl-6 mb-6 space-y-2;
-}
-
-.prose ol {
-  @apply list-decimal pl-6 mb-6 space-y-2;
-}
-
-.prose li {
-  @apply text-gray-700;
-}
-
-.prose hr {
-  @apply border-gray-200 my-8;
-}
-
-.prose table {
-  @apply min-w-full border border-gray-200 rounded-lg mb-6;
-}
-
-.prose th {
-  @apply bg-gray-50 border border-gray-200 px-4 py-2 text-left font-semibold text-gray-900;
-}
-
-.prose td {
-  @apply border border-gray-200 px-4 py-2 text-gray-700;
-}
-
-/* Code blocks styling - no borders */
-.prose pre {
-  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6;
+  @apply bg-transparent text-paper p-0 border-0;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
-
-.prose pre code {
-  @apply bg-transparent text-gray-100 p-0;
-}
-
