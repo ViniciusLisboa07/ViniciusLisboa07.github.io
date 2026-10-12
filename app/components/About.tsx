@@ -6,13 +6,18 @@ import { useTranslation } from 'react-i18next'
 import { Download } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
+const stack = [
+  "Ruby on Rails", "React", "TypeScript", "PostgreSQL", "MySQL", "Sidekiq",
+  "Redis", "Hotwire", "Docker", "AWS", "RSpec",
+]
+
 export default function About() {
   const { t } = useTranslation()
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-paper-dark">
+    <section id="about" className="py-24 md:py-32">
       <div className="container mx-auto max-w-6xl px-6">
-        <SectionHeading index="01" label={t('about')} title={t('about_me')} />
+        <SectionHeading index="04" label={t('about')} title={t('about_me')} />
 
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
           <motion.div
@@ -23,10 +28,16 @@ export default function About() {
             className="md:col-span-7 text-lg md:text-xl leading-relaxed text-ink-soft space-y-6"
           >
             <p className="font-serif text-2xl md:text-3xl leading-snug text-ink">
-              {t('about_me_description')}
+              {t('about_lead')}
             </p>
-            <p>{t('about_me_description_2')}</p>
-            <p>{t('about_me_description_3')}</p>
+            <p>{t('about_body_1')}</p>
+            <p>{t('about_body_2')}</p>
+            <div className="border-y border-ink/30 py-5">
+              <span className="block mb-2 font-mono text-xs uppercase tracking-[0.2em] text-ink-muted">{t('stack')}</span>
+              <ul className="flex flex-wrap gap-x-4 gap-y-1 text-base text-ink">
+                {stack.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
             <motion.a
               href="https://drive.google.com/file/d/1aDUU9n5-bAtFSs8jtni3ShynIjzCv4vq/view?usp=sharing"
               target="_blank"

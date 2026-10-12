@@ -12,7 +12,7 @@ export default function Presentation() {
 
   const socials = [
     { href: "https://github.com/ViniciusLisboa07", label: "GitHub", icon: Github },
-    { href: "https://www.linkedin.com/in/vin%C3%ADcius-lisboa-6347971a9/", label: "LinkedIn", icon: Linkedin },
+    { href: "https://www.linkedin.com/in/lisboavini", label: "LinkedIn", icon: Linkedin },
     { href: "mailto:viniciuslisboa1001@gmail.com", label: "E-mail", icon: Mail },
   ]
 
@@ -26,9 +26,9 @@ export default function Presentation() {
           className="max-w-4xl"
         >
           <div className="flex items-center gap-4 mb-8 font-mono text-xs uppercase tracking-[0.2em] text-ink-muted">
-            <span>{t('fullstack_developer')}</span>
+            <span>{t('hero_eyebrow_role')}</span>
             <span className="hidden sm:block h-px w-12 bg-ink/30" />
-            <span className="hidden sm:inline">Ruby on Rails</span>
+            <span className="hidden sm:inline">{t('hero_eyebrow_place')}</span>
           </div>
 
           <p className="text-xl md:text-2xl text-ink-soft mb-3">{t('hello')}</p>
@@ -58,7 +58,7 @@ export default function Presentation() {
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <a
-              href="#projects"
+              href="#experience"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-lg font-medium text-paper transition-colors hover:bg-forest"
             >
               {t('see_my_work')}

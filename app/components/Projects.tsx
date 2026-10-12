@@ -10,16 +10,10 @@ export default function Projects() {
 
   const projects = [
     {
-      category: "Ruby on Rails App",
-      title: "Agile Deck",
-      description: t('agile_deck_description'),
-      link: "https://github.com/ViniciusLisboa07/agile-deck",
-    },
-    {
-      category: "NodeJS Utility",
-      title: "Text to Speech",
-      description: t('nodejs_tts_description'),
-      link: "https://github.com/ViniciusLisboa07/nodeJS-text-to-speech",
+      category: "Rust Desktop App",
+      title: "r-ereader",
+      description: t('r_ereader_description'),
+      link: "https://github.com/ViniciusLisboa07/r-ereader",
     },
     {
       category: "Ruby Compiler",
@@ -27,18 +21,12 @@ export default function Projects() {
       description: t('lisb_description'),
       link: "https://github.com/ViniciusLisboa07/lisb",
     },
-    {
-      category: "Condominium System",
-      title: "CondoGenius",
-      description: t('condogenius_description'),
-      link: "https://github.com/CondoGenius/condogenius",
-    }
   ]
 
   return (
     <section id="projects" className="py-24 md:py-32">
       <div className="container mx-auto max-w-6xl px-6">
-        <SectionHeading index="02" label={t('projects')} title={t('selected_work')} />
+        <SectionHeading index="02" label={t('projects')} title={t('side_projects')} />
 
         <div className="border-t border-ink/30">
           {projects.map((project, index) => (

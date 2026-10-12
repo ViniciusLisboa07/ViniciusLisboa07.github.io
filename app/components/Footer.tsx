@@ -7,31 +7,43 @@ export default function Footer() {
   const { t } = useTranslation()
 
   const links = [
-    { href: "https://www.linkedin.com/in/vin%C3%ADcius-lisboa-6347971a9/", label: t('linkedin'), icon: Linkedin },
+    { href: "https://www.linkedin.com/in/lisboavini", label: t('linkedin'), icon: Linkedin },
     { href: "https://wa.me/5541988073637", label: t('whatsapp'), icon: MessageCircle },
     { href: "https://github.com/ViniciusLisboa07", label: t('github'), icon: Github },
   ]
 
   return (
-    <footer className="bg-ink text-paper">
-      <div className="container mx-auto max-w-6xl px-6 py-10 flex flex-col-reverse md:flex-row items-center justify-between gap-6">
-        <p className="text-sm text-paper/60">
-          &copy; {new Date().getFullYear()} <span className="font-serif">Vinícius <span className="italic">Lisboa</span></span>. {t('all_rights_reserved')}
-        </p>
+    <footer className="relative overflow-hidden bg-forest waves-paper text-paper">
+      <div className="relative container mx-auto max-w-6xl px-6 pt-20 md:pt-28 pb-10">
+        <figure className="max-w-xl mb-16 md:mb-24">
+          <blockquote className="font-serif text-3xl md:text-5xl leading-tight tracking-tight">
+            <span className="italic">“{t('plato_quote')}”</span>
+          </blockquote>
+          <figcaption className="mt-6 flex items-center gap-4 font-mono text-xs uppercase tracking-[0.2em] text-paper/60">
+            <span className="h-px w-12 bg-paper/30" />
+            {t('plato_source')}
+          </figcaption>
+        </figure>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-10">
           {links.map(({ href, label, icon: Icon }) => (
             <a
               key={href}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-paper/70 transition-colors hover:text-paper"
+              className="inline-flex items-center gap-2 text-sm text-paper/75 transition-colors hover:text-paper"
             >
               <Icon className="h-4 w-4" />
               {label}
             </a>
           ))}
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-2 md:gap-6 border-t border-paper/20 pt-6 font-mono text-[11px] uppercase tracking-[0.15em] text-paper/50">
+          <p>
+            &copy; {new Date().getFullYear()} Vinícius Lisboa. {t('all_rights_reserved')}
+          </p>
         </div>
       </div>
     </footer>
