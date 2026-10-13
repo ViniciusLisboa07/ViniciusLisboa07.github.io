@@ -137,5 +137,8 @@
   "about_body_1": "I started as an intern at Grupo Euax in 2021 and have since worked on a B2B CRM, a multi-tenant corporate learning platform and now agribusiness at Agro1.",
   "about_body_2": "I hold a degree in Information Systems from Universidade Positivo and live in Curitiba, Brazil.",
   "stack": "Stack",
-  "r_ereader_description": "Ebook reader and personal library in pure Rust, with a custom EPUB parser, a GPUI interface and Obsidian integration."
+  "r_ereader_description": "Ebook reader and personal library in pure Rust, with a custom EPUB parser, a GPUI interface and Obsidian integration.",
+  "experience_intro": "From an internship in 2021 to my current role: five years building and maintaining SaaS products in Ruby on Rails.",
+  "keep_scrolling": "Keep scrolling",
+  "experience_end": "The full story, with dates and details, is in my resume."
 }

@@ -137,5 +137,8 @@
   "about_body_1": "Comecei como estagiário no Grupo Euax em 2021 e, desde então, passei por um CRM B2B, uma plataforma multi-tenant de educação corporativa e, agora, o agronegócio na Agro1.",
   "about_body_2": "Sou formado em Sistemas de Informação pela Universidade Positivo e moro em Curitiba.",
   "stack": "Stack",
-  "r_ereader_description": "Leitor de ebooks e biblioteca pessoal em Rust puro, com parser de EPUB próprio, interface em GPUI e integração com o Obsidian."
+  "r_ereader_description": "Leitor de ebooks e biblioteca pessoal em Rust puro, com parser de EPUB próprio, interface em GPUI e integração com o Obsidian.",
+  "experience_intro": "Do estágio em 2021 ao trabalho atual: cinco anos construindo e mantendo produtos SaaS em Ruby on Rails.",
+  "keep_scrolling": "Continue rolando",
+  "experience_end": "A história completa, com datas e detalhes, está no currículo."
 }
