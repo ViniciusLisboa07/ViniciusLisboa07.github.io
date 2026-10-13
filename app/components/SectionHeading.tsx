@@ -12,9 +12,9 @@ export default function SectionHeading({ index, label, title, tone = "ink" }: Se
   return (
     <div className="mb-12 md:mb-16">
       <div className={`flex items-center gap-4 mb-5 font-mono text-xs uppercase tracking-[0.2em] ${muted}`}>
-        <span>§ {index}</span>
-        <span className={`h-px flex-1 max-w-24 ${rule}`} />
-        <span>{label}</span>
+        <span className="whitespace-nowrap">§ {index}</span>
+        <span className={`h-px min-w-6 flex-1 max-w-24 ${rule}`} />
+        <span className="whitespace-nowrap">{label}</span>
       </div>
       <h2 className="font-serif text-4xl md:text-6xl font-medium tracking-tight">{title}</h2>
     </div>

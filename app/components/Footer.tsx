@@ -14,7 +14,7 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-forest waves-paper text-paper">
-      <div className="relative container mx-auto max-w-6xl px-6 pt-20 md:pt-28 pb-10">
+      <div className="relative container mx-auto max-w-6xl px-6 pt-20 md:pt-28 pb-12 md:pb-16">
         <figure className="max-w-xl mb-16 md:mb-24">
           <blockquote className="font-serif text-3xl md:text-5xl leading-tight tracking-tight">
             <span className="italic">“{t('plato_quote')}”</span>
@@ -46,6 +46,14 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      {/* Assinatura gigante, cortada pela borda inferior */}
+      <p
+        aria-hidden
+        className="relative select-none whitespace-nowrap px-[2vw] font-serif text-[14vw] font-medium leading-[0.78] tracking-tight text-paper/90 -mb-[0.08em]"
+      >
+        Vinicius <span className="italic">Lisboa</span>
+      </p>
     </footer>
   )
 }
